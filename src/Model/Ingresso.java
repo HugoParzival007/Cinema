@@ -3,6 +3,7 @@ package Model;
 import java.time.LocalDateTime;
 
 public class Ingresso {
+    private long id;
     private String codigo;
     private TipoIngresso tipo;
     private Sessao sessao;
@@ -10,13 +11,22 @@ public class Ingresso {
     private Funcionario funcionario;
     private LocalDateTime horarioVenda;
 
-    public Ingresso(String codigo, TipoIngresso tipo, Sessao sessao, Cliente cliente, Funcionario funcionario, LocalDateTime horarioVenda) {
+    public Ingresso(long id, String codigo, TipoIngresso tipo, Sessao sessao, Cliente cliente, Funcionario funcionario, LocalDateTime horarioVenda) {
+        this.id = id;
         this.codigo = codigo;
         this.tipo = tipo;
         this.sessao = sessao;
         this.cliente = cliente;
         this.funcionario = funcionario;
         this.horarioVenda = horarioVenda;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getCodigo() {

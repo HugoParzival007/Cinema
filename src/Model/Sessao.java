@@ -5,11 +5,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sessao {
+    private long id;
     private Filme filme;
     private Sala sala;
     private LocalDateTime inicio;
     private LocalDateTime fim;
     List<Ingresso> listIgressosVendidos = new ArrayList<>();
+
+    public Sessao(long id, Filme filme, Sala sala, LocalDateTime inicio, LocalDateTime fim, List<Ingresso> listIgressosVendidos) {
+        this.id = id;
+        this.filme = filme;
+        this.sala = sala;
+        this.inicio = inicio;
+        this.fim = fim;
+        this.listIgressosVendidos = listIgressosVendidos;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public Filme getFilme() {
         return filme;
@@ -48,14 +66,6 @@ public class Sessao {
     }
 
     public void setListIgressosVendidos(List<Ingresso> listIgressosVendidos) {
-        this.listIgressosVendidos = listIgressosVendidos;
-    }
-
-    public Sessao(Filme filme, Sala sala, LocalDateTime inicio, LocalDateTime fim, List<Ingresso> listIgressosVendidos) {
-        this.filme = filme;
-        this.sala = sala;
-        this.inicio = inicio;
-        this.fim = fim;
         this.listIgressosVendidos = listIgressosVendidos;
     }
 }

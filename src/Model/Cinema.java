@@ -4,18 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Cinema {
+    private long id;
     private String nome;
     List<Sala> listSala = new ArrayList<>();
     List<Filme> listFilme = new ArrayList<>();
     List<Sessao> listSessao = new ArrayList<>();
 
-    public Cinema(String nome, List<Sala> listSala, List<Filme> listFilme, List<Sessao> listSessao) {
+    public Cinema(long id, String nome, List<Sala> listSala, List<Filme> listFilme, List<Sessao> listSessao) {
+        this.id = id;
         this.nome = nome;
         this.listSala = listSala;
         this.listFilme = listFilme;
         this.listSessao = listSessao;
     }
 
+    public long getId() {
+        return id;
+    }
+    public void setId(long id) {
+        this.id = id;
+    }
     public String getNome() {
         return nome;
     }
